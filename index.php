@@ -11,5 +11,15 @@
 </head>
 <body>
 Only the dead have seen the end of war - Plato
+
+<form action='signin.php' method='post'>
+
+ Login: <br /> <input type='text' name='login' /></br >
+ Password: <br /> <input type='password' name='password' /></br >
+
+ <input type='submit' value='signin' />
+ 
+</form>
+
 </body>
 </html>
