@@ -1,19 +1,22 @@
 <?php 
-
-    require_once "connect.php";
-
-    $connect = new mysqli($host, $db_user, $db_passowrd, $db_name);
-
-   if($connect->connect_errno!=0)
-   {
-    echo "Error:".$connect->connect_errno."Opis:".$connect->connect_error;
-   } 
-   else
-   {
+	require_once "connect.php";
+    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    if ($polaczenie->connect_errno!=0)
+	{
+        echo "Error: ".$polaczenie->connect_error;
+	}
+	else
+	{
     $login = $_POST['login'];
     $password = $_POST['password'];
-    echo "It works!";
-    $connect->close();
-   }
+    $sql = "SELECT * FROM uzytkownicy WHERE user='$login' AND pass='$password'";
 
+    if ($result = @$polaczenie->query($sql)) {
+        
+    }
+
+    $polaczenie->close();
+   }
 ?>
+
+//42:20
